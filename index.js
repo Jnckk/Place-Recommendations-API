@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require("cors");
+const favicon = require("serve-favicon");
 const placesRouter = require("./route/places");
 const categoryRouter = require("./route/category"); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(favicon(path.join(__dirname, "favicon.ico")));
 
 // Enable CORS for all routes
 app.use(cors());
