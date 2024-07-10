@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const placesRouter = require("./route/places");
+const categoryRouter = require("./route/category"); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -12,7 +13,8 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
-app.use(placesRouter);
+app.use("/places", placesRouter);
+app.use("/category", categoryRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

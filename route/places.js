@@ -4,7 +4,7 @@ const fetchData = require("./fetchdataset");
 
 const router = express.Router();
 
-router.get("/places", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     let data = await fetchData();
 
