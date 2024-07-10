@@ -6,7 +6,7 @@ const csv = require("csv-parser");
 const fetchData = () => {
   return new Promise((resolve, reject) => {
     const results = [];
-    const filePath = path.join(__dirname, "..", "Dataset", "Dataset.csv"); // Perbaiki jalur file
+    const filePath = path.join(__dirname, "..", "Dataset", "Dataset.csv");
 
     fs.createReadStream(filePath)
       .pipe(csv())
@@ -25,7 +25,7 @@ const fetchData = () => {
           travel2: data.travel2,
           travel3: data.travel3,
           travel4: data.travel4,
-          images: data.images,
+          images: `https://github.com/Jnckk/Place-Recommendations-API/blob/main/Images/${data.place_id}.jpg`,
         });
       })
       .on("end", () => {
