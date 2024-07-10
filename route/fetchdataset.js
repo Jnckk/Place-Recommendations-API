@@ -25,7 +25,7 @@ const fetchData = () => {
           travel2: data.travel2,
           travel3: data.travel3,
           travel4: data.travel4,
-          images: `/Images/${data.place_id}.jpg`, // Menyimpan gambar secara lokal di direktori 'Images'
+          images: `https://github.com/Jnckk/Place-Recommendations-API/blob/main/Images/${data.place_id}.jpg`,
         });
       })
       .on("end", () => {
