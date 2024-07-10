@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const favicon = require("serve-favicon");
 const placesRouter = require("./route/places");
 const categoryRouter = require("./route/category"); 
