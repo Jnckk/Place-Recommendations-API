@@ -25,7 +25,7 @@ const fetchData = () => {
           travel2: data.travel2,
           travel3: data.travel3,
           travel4: data.travel4,
-          images: `https://github.com/Jnckk/Place-Recommendations-API/blob/main/Images/${data.place_id}.jpg`,
+          images: `https://enon8okxb2auhfev.public.blob.vercel-storage.com/Images/${data.place_id}.jpg`,
         });
       })
       .on("end", () => {
