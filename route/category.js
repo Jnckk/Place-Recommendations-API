@@ -1,4 +1,3 @@
-// route/category.js
 const express = require("express");
 const fetchData = require("./fetchdataset");
 
@@ -22,6 +21,14 @@ router.get("/", async (req, res) => {
         listPlaces: [],
       });
     } else {
+      // Sort data by rating (descending) and place (ascending)
+      data.sort((a, b) => {
+        if (b.rating !== a.rating) {
+          return b.rating - a.rating; // Sort by rating (descending)
+        }
+        return a.place.localeCompare(b.place); // Sort by place (ascending)
+      });
+
       res.json({
         error: "false",
         message: `Places in category '${categoryName}' fetched successfully`,
