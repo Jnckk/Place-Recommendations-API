@@ -26,8 +26,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Menyajikan file statis dari direktori "Website UI"
+app.use(express.static(path.join(__dirname, "Website UI")));
+
+// Rute untuk menyajikan index.html pada root
 app.get("/", (req, res) => {
-  res.send("Welcome to the API");
+  res.sendFile(path.join(__dirname, "Website UI", "index.html"));
 });
 
 app.use("/places", placesRouter);
