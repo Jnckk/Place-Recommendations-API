@@ -4,7 +4,7 @@ const path = require("path");
 const favicon = require("serve-favicon");
 const placesRouter = require("./route/places");
 const categoryRouter = require("./route/category");
-const allCategoriesRouter = require("./route/allcategory"); 
+const allCategoriesRouter = require("./route/allcategory");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
