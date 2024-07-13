@@ -84,4 +84,10 @@ h2 {
     .endpoint a {
         font-size: 0.9em;
     }
+
+    .logo {
+        font-size: 2em;
+        width: 1.5em;
+        height: 1.5em;
+    }
 }
