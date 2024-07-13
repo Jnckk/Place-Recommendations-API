@@ -3,7 +3,8 @@ const cors = require("cors");
 const path = require("path");
 const favicon = require("serve-favicon");
 const placesRouter = require("./route/places");
-const categoryRouter = require("./route/category"); 
+const categoryRouter = require("./route/category");
+const allCategoriesRouter = require("./route/allcategory"); 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,6 +37,7 @@ app.get("/", (req, res) => {
 
 app.use("/places", placesRouter);
 app.use("/category", categoryRouter);
+app.use("/allcategory", allCategoriesRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
