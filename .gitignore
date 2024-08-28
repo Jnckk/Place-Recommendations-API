@@ -1,4 +1,8 @@
 node_modules
 .env
-Dataset
-Images
+
+# Ignore the Dataset directory
+/Dataset/
+
+# Ignore the Images directory
+/Images/
