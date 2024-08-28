@@ -4,19 +4,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": ""
+    "start": "",
+    "node": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.1",
+    "@supabase/supabase-js": "^2.45.2",
     "@vercel/blob": "^0.23.4",
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "nodemon": "^3.1.4",
     "rest-api": "file:",
     "serve-favicon": "^2.5.0"
   }

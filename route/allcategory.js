@@ -1,4 +1,3 @@
-// route/allcategory.js
 const express = require("express");
 const fetchData = require("./fetchdataset");
 
@@ -8,7 +7,7 @@ router.get("/", async (req, res) => {
   try {
     let data = await fetchData();
 
-    // Extract unique categories and sort them alphabetically
+    // Extract unique categories from fetched data
     const categories = [...new Set(data.map((item) => item.category))].sort(
       (a, b) => a.localeCompare(b)
     );

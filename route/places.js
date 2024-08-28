@@ -1,4 +1,3 @@
-// places.js
 const express = require("express");
 const fetchData = require("./fetchdataset");
 
@@ -8,12 +7,9 @@ router.get("/", async (req, res) => {
   try {
     let data = await fetchData();
 
-    // Sort by rating (descending) and place (ascending)
+    // Sort by place_id (ascending)
     data.sort((a, b) => {
-      if (b.rating !== a.rating) {
-        return b.rating - a.rating;
-      }
-      return a.place.localeCompare(b.place);
+      return a.place_id - b.place_id;
     });
 
     res.json({
