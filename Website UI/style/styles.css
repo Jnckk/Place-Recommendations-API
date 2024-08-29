@@ -1,7 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   font-family: 'New Amsterdam', sans-serif;
   background-color: #000036;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -61,12 +70,13 @@ body {
   background-color: #2727A3;
 }
 
+.container.content {
+  flex: 1; /* Allow the content to expand and push the footer down */
+}
+
 .footer {
   background-color: #000036;
   padding: 10px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   color: #ffffff;
 }
