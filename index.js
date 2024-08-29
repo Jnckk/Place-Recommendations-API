@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 3000;
 
 app.use(favicon(path.join(__dirname, "favicon.ico")));
 
-// Enable CORS for all routes
 app.use(cors());
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -27,10 +26,8 @@ app.use((req, res, next) => {
   next();
 });
 
-// Menyajikan file statis dari direktori "Website UI"
 app.use(express.static(path.join(__dirname, "Website UI")));
 
-// Rute untuk menyajikan index.html pada root
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "Website UI", "index.html"));
 });

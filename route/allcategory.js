@@ -7,7 +7,6 @@ router.get("/", async (req, res) => {
   try {
     let data = await fetchData();
 
-    // Extract unique categories from fetched data
     const categories = [...new Set(data.map((item) => item.category))].sort(
       (a, b) => a.localeCompare(b)
     );

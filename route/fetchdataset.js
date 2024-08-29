@@ -1,7 +1,6 @@
 const { createClient } = require("@supabase/supabase-js");
 require("dotenv").config();
 
-// Supabase URL dan anon key diambil dari file .env
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
@@ -9,14 +8,13 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 const fetchData = async () => {
   try {
     const { data, error } = await supabase
-      .from("Place-Dataset") // Nama tabel Anda di Supabase
-      .select("*"); // Pilih semua kolom atau sesuaikan dengan kolom yang Anda butuhkan
+      .from("Place-Dataset")
+      .select("*");
 
     if (error) {
       throw error;
     }
 
-    // Jika data memiliki hasil, proses data tersebut
     return data.map((item) => ({
       place_id: item.place_id,
       rating: item.rating,
