@@ -7,9 +7,12 @@ router.get("/", async (req, res) => {
   try {
     let data = await fetchData();
 
-    // Sort by place_id (ascending)
+    // Sort by rating (descending) and then by place (alphabetically)
     data.sort((a, b) => {
-      return a.place_id - b.place_id;
+      if (b.rating !== a.rating) {
+        return b.rating - a.rating; // Sort by rating (descending)
+      }
+      return a.place.localeCompare(b.place); // Sort by place (alphabetically)
     });
 
     res.json({

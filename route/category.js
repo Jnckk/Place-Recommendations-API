@@ -21,12 +21,12 @@ router.get("/", async (req, res) => {
         listPlaces: [],
       });
     } else {
-      // Sort data by rating (descending) and place (ascending)
+      // Sort data by rating (descending) and then by place (alphabetically)
       data.sort((a, b) => {
         if (b.rating !== a.rating) {
           return b.rating - a.rating; // Sort by rating (descending)
         }
-        return a.place.localeCompare(b.place); // Sort by place (ascending)
+        return a.place.localeCompare(b.place); // Sort by place (alphabetically)
       });
 
       res.json({
