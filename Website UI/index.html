@@ -1,44 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Documentation</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Keania+One&family=Karma&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <div class="logo">P</div>
-    <div class="container">
-      <h1>API DOCUMENTATION</h1>
-      <h2>ENDPOINT</h2>
-      <div class="endpoint">
-        <h3>GET ALL PLACE</h3>
-        <a
-          href="https://place-recommendations-api.vercel.app/places"
-          target="_blank"
-          >https://place-recommendations-api.vercel.app/places</a
-        >
-      </div>
-      <div class="endpoint">
-        <h3>GET ALL CATEGORY</h3>
-        <a
-          href="https://place-recommendations-api.vercel.app/allcategory"
-          target="_blank"
-          >https://place-recommendations-api.vercel.app/allcategory</a
-        >
-      </div>
-      <div class="endpoint">
-        <h3>GET BY CATEGORY</h3>
-        <a
-          href="https://place-recommendations-api.vercel.app/category?category={CATEGORY}"
-          target="_blank"
-          >https://place-recommendations-api.vercel.app/category?category={CATEGORY}</a
-        >
-      </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Recommendations Api</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=New+Amsterdam:wght@400;700&display=swap">
+    <link rel="stylesheet" href="./style/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="./icon/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand">
+                <img src="./icon/icon-512.png" alt="Bootstrap" width="45" height="45">
+                My Website
+            </a>
+            <!-- <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul> -->
+        </div>
+    </nav>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Welcome to My Website</h1>
+                <p style="text-align: justify;">
+                    This website provides an API that allows you to retrieve data about tourist spots in East Java. Whether you're
+                    looking for cultural sites, amusement parks, natural attractions, or religious places, our API offers a
+                    comprehensive database to help you find the best places to visit.
+                </p>
+                <p style="text-align: justify;">
+                    Our API is designed to be easy to use and integrate, offering endpoints for various categories of tourist spots.
+                    Explore the rich cultural heritage, scenic landscapes, and exciting attractions of East Java with our detailed and
+                    up-to-date information.
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingNew">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNew" aria-expanded="false" aria-controls="collapseNew">
+                                Base Url
+                            </button>
+                        </h2>
+                        <div id="collapseNew" class="accordion-collapse collapse" aria-labelledby="headingNew"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a href="https://place-recommendations-api.vercel.app" target="_blank"
+                                    class="link-light">https://place-recommendations-api.vercel.app</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Get All Place
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a href="https://place-recommendations-api.vercel.app/places" target="_blank"
+                                    class="link-light">{Base Url}/places</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Get All Category
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <a href="https://place-recommendations-api.vercel.app/allcategory" target="_blank"
+                                    class="link-light">{Base Url}/allcategory</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Get Place By Category
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-unstyled">
+                                    <li><a href="https://place-recommendations-api.vercel.app/category?category=Budaya"
+                                            target="_blank" class="link-light">{Base Url}/category?category=Budaya</a>
+                                    </li>
+                                    <li><a href="https://place-recommendations-api.vercel.app/category?category=Taman%20Hiburan"
+                                            target="_blank" class="link-light">{Base Url}/category?category=Taman
+                                            Hiburan</a></li>
+                                    <li><a href="https://place-recommendations-api.vercel.app/category?category=Wisata%20Alam"
+                                            target="_blank" class="link-light">{Base Url}/category?category=Wisata
+                                            Alam</a></li>
+                                    <li><a href="https://place-recommendations-api.vercel.app/category?category=Wisata%20Bahari"
+                                            target="_blank" class="link-light">{Base Url}/category?category=Wisata
+                                            Bahari</a></li>
+                                    <li><a href="https://place-recommendations-api.vercel.app/category?category=Wisata%20Religi"
+                                            target="_blank" class="link-light">{Base Url}/category?category=Wisata
+                                            Religi</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </body>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Place Recomendations API. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>
