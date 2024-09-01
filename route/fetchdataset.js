@@ -14,8 +14,9 @@ const s3 = new S3Client({
 
 const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "webp"];
 
+// Check if the image exists in S3
 const checkImageExists = async (place_id) => {
-  for (const ext of IMAGE_EXTENSIONS) {
+  const checks = IMAGE_EXTENSIONS.map(async (ext) => {
     try {
       const command = new HeadObjectCommand({
         Bucket: process.env.BUCKET_BUCKET_NAME,
@@ -23,21 +24,22 @@ const checkImageExists = async (place_id) => {
       });
 
       await s3.send(command);
-
-      const imageUrl = `${process.env.DATABASE_IMAGE_URL}/${place_id}.${ext}`;
-      console.log(`Found image with extension ${ext}:`, imageUrl);
-      return imageUrl;
+      return `${process.env.DATABASE_IMAGE_URL}/${place_id}.${ext}`;
     } catch (error) {
       if (error.name === "NotFound") {
-        continue;
+        return null;
       }
       console.error(
         `Error checking image with extension ${ext}:`,
         error.message
       );
+      throw error;
     }
-  }
-  return "image not ready";
+  });
+
+  // Wait for all checks and return the first valid image URL
+  const results = await Promise.all(checks);
+  return results.find((url) => url !== null) || "image not ready";
 };
 
 const fetchData = async () => {
@@ -58,7 +60,6 @@ const fetchData = async () => {
     const dataWithImages = await Promise.all(
       data.map(async (item) => {
         const imageUrl = await checkImageExists(item.place_id);
-
         return {
           place_id: item.place_id,
           rating: item.rating,
