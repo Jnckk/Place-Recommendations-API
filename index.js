@@ -4,11 +4,13 @@ const path = require("path");
 const placesRouter = require("./route/places");
 const categoryRouter = require("./route/category");
 const allCategoriesRouter = require("./route/allcategory");
+const { VercelAnalyticsMiddleware } = require("@vercel/analytics");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// app.use(favicon(path.join(__dirname, "favicon.ico")));
+// Integrasi Vercel Analytics
+app.use(VercelAnalyticsMiddleware());
 
 app.use(cors());
 app.use((req, res, next) => {
