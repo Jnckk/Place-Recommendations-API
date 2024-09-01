@@ -29,7 +29,7 @@ const checkImageExists = async (place_id) => {
       return imageUrl;
     } catch (error) {
       if (error.name === "NotFound") {
-        continue; // Lanjutkan ke ekstensi berikutnya jika file tidak ditemukan
+        continue;
       }
       console.error(
         `Error checking image with extension ${ext}:`,
