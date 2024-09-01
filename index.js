@@ -4,6 +4,9 @@ const path = require("path");
 const placesRouter = require("./route/places");
 const categoryRouter = require("./route/category");
 const allCategoriesRouter = require("./route/allcategory");
+const { inject } = require("@vercel/analytics");
+
+inject();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
