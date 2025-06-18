@@ -1,261 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Place Recommendations Api</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=New+Amsterdam:wght@400;700&display=swap"
-    />
-    <link rel="stylesheet" href="./style/styles.css" />
-    <link rel="icon" href="./icon/favicon.ico" type="image/x-icon" />
-  </head>
-
-  <body>
-    <div class="container content">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container">
-          <a class="navbar-brand">
-            <img
-              src="./icon/icon-512.png"
-              alt="Bootstrap"
-              width="45"
-              height="45"
-            />
-            Place Recommendations
-          </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Recommendations API</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./style/styles.css">
+  <link rel="icon" href="./icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="navbar-brand">
+        <img src="./icon/icon-512.png" alt="Place Recommendations" width="45" height="45">
+        Place Recommendations API
+      </a>
+    </div>
+  </nav>  <div class="container content">
+    <div class="row">
+      <div class="col-lg-7 mb-4">
+        <div class="hero-section">
+          <h1><i class="fas fa-map-marked-alt me-3"></i>Discover East Java</h1>
+          <p>Welcome to the most comprehensive API for East Java tourist destinations. Our platform provides detailed information about cultural sites, amusement parks, natural attractions, and religious places across the beautiful province of East Java.</p>
+          <p>Built with modern technology and designed for developers, our API offers seamless integration with clean endpoints, comprehensive data, and reliable performance. Start exploring the rich heritage and stunning landscapes of East Java today.</p>
+          <div class="hero-badges">
+            <span class="badge hero-badge">
+              <i class="fas fa-database me-2"></i>Rich Dataset
+            </span>
+            <span class="badge hero-badge">
+              <i class="fas fa-code me-2"></i>RESTful API
+            </span>
+            <span class="badge hero-badge">
+              <i class="fas fa-mobile-alt me-2"></i>Mobile Ready
+            </span>
+          </div>
         </div>
-      </nav>
+      </div>      <div class="col-lg-5">
+        <div class="api-cards">
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-server me-2"></i>Base URL</span>
+                <span class="icon">▼</span>
+              </h3>
+            </div>
+            <div class="api-card-body">
+              <a id="baseUrlLink" href="#" target="_blank" class="api-link">
+                <i class="fas fa-external-link-alt me-2"></i>
+                <span id="baseUrlText">Loading...</span>
+              </a>
+            </div>
+          </div>
 
-      <div class="row">
-        <div class="col-md-8">
-          <h1>Welcome to My Website</h1>
-          <p style="text-align: justify">
-            This website provides an API that allows you to retrieve data about
-            tourist spots in East Java. Whether you're looking for cultural
-            sites, amusement parks, natural attractions, or religious places,
-            our API offers a comprehensive database to help you find the best
-            places to visit.
-          </p>
-          <p style="text-align: justify">
-            Our API is designed to be easy to use and integrate, offering
-            endpoints for various categories of tourist spots. Explore the rich
-            cultural heritage, scenic landscapes, and exciting attractions of
-            East Java with our detailed and up-to-date information.
-          </p>
-        </div>
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-list me-2"></i>Get All Places</span>
+                <span class="icon">▼</span>
+              </h3>
+            </div>
+            <div class="api-card-body">
+              <a id="allPlaceLink" href="#" target="_blank" class="api-link">
+                <i class="fas fa-map-marker-alt me-2"></i>
+                GET /places
+              </a>
+              <small class="d-block mt-2 text-light opacity-75">Retrieve all tourist places in East Java</small>
+            </div>
+          </div>
 
-        <div class="col-md-4">
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingNew">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseNew"
-                  aria-expanded="false"
-                  aria-controls="collapseNew"
-                >
-                  Base Url
-                </button>
-              </h2>
-              <div
-                id="collapseNew"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingNew"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <a
-                    id="baseUrlLink"
-                    href="#"
-                    target="_blank"
-                    class="link-light"
-                  ></a>
-                </div>
-              </div>
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-tags me-2"></i>Get All Categories</span>
+                <span class="icon">▼</span>
+              </h3>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="false"
-                  aria-controls="collapseOne"
-                >
-                  Get All Place
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <a
-                    id="allPlaceLink"
-                    href="#"
-                    target="_blank"
-                    class="link-light"
-                    >{Base Url}/places</a
-                  >
-                </div>
-              </div>
+            <div class="api-card-body">
+              <a id="allCategoryLink" href="#" target="_blank" class="api-link">
+                <i class="fas fa-th-list me-2"></i>
+                GET /allcategory
+              </a>
+              <small class="d-block mt-2 text-light opacity-75">Get list of all available categories</small>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Get All Category
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <a
-                    id="allCategoryLink"
-                    href="#"
-                    target="_blank"
-                    class="link-light"
-                    >{Base Url}/allcategory</a
-                  >
-                </div>
-              </div>
+          </div>
+
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-filter me-2"></i>Get Places by Category</span>
+                <span class="icon">▼</span>
+              </h3>
             </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Get Place By Category
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <ul class="list-unstyled">
-                    <li>
-                      <a
-                        id="budayaLink"
-                        href="#"
-                        target="_blank"
-                        class="link-light"
-                        >{Base Url}/category?category=Budaya</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        id="tamanHiburanLink"
-                        href="#"
-                        target="_blank"
-                        class="link-light"
-                        >{Base Url}/category?category=Taman Hiburan</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        id="wisataAlamLink"
-                        href="#"
-                        target="_blank"
-                        class="link-light"
-                        >{Base Url}/category?category=Wisata Alam</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        id="wisataBahariLink"
-                        href="#"
-                        target="_blank"
-                        class="link-light"
-                        >{Base Url}/category?category=Wisata Bahari</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        id="wisataReligiLink"
-                        href="#"
-                        target="_blank"
-                        class="link-light"
-                        >{Base Url}/category?category=Wisata Religi</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
+            <div class="api-card-body">
+              <ul class="category-links">
+                <li>
+                  <a id="budayaLink" href="#" target="_blank" class="api-link">
+                    <i class="fas fa-monument me-2"></i>
+                    GET /category?category=Budaya
+                  </a>
+                </li>                <li>
+                  <a id="tamanHiburanLink" href="#" target="_blank" class="api-link">
+                    <i class="fas fa-gamepad me-2"></i>
+                    GET /category?category=Taman Hiburan
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataAlamLink" href="#" target="_blank" class="api-link">
+                    <i class="fas fa-mountain me-2"></i>
+                    GET /category?category=Wisata Alam
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataBahariLink" href="#" target="_blank" class="api-link">
+                    <i class="fas fa-water me-2"></i>
+                    GET /category?category=Wisata Bahari
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataReligiLink" href="#" target="_blank" class="api-link">
+                    <i class="fas fa-mosque me-2"></i>
+                    GET /category?category=Wisata Religi
+                  </a>
+                </li>
+              </ul>
+              <small class="d-block mt-2 text-light opacity-75">Filter places by specific categories</small>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="footer">
-      <p>&copy; 2024 Place Recommendations API. All rights reserved.</p>
+  </div>  <footer class="footer">
+    <div class="container">
+      <p>
+        <i class="fas fa-code me-2"></i>
+        &copy; <span id="currentYear"></span> Place Recommendations API. Built with ❤️ for developers.
+      </p>
     </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const REDIRECT_URL = window.location.origin;
 
-    <script>
-      const REDIRECT_URL = window.location.origin;
+    function toggleCard(header) {
+      const card = header.parentElement;
+      const isExpanded = card.getAttribute('data-expanded') === 'true';
+      
+      document.querySelectorAll('.api-card').forEach(otherCard => {
+        if (otherCard !== card && otherCard.getAttribute('data-expanded') === 'true') {
+          otherCard.setAttribute('data-expanded', 'false');
+          const links = otherCard.querySelectorAll('.api-link');
+          links.forEach((link, index) => {
+            setTimeout(() => {
+              link.style.opacity = '0';
+              link.style.transform = 'translateX(-20px)';
+            }, index * 30);
+          });
+        }
+      });
+      
+      setTimeout(() => {
+        card.setAttribute('data-expanded', (!isExpanded).toString());
+        
+        if (!isExpanded) {
+          const links = card.querySelectorAll('.api-link');
+          links.forEach((link, index) => {
+            setTimeout(() => {
+              link.style.opacity = '1';
+              link.style.transform = 'translateX(0)';
+            }, (index * 50) + 200);
+          });
+        }
+      }, isExpanded ? 0 : 100);
+    }
 
-      function setApiLinks() {
-        const baseUrlLink = document.getElementById("baseUrlLink");
-        baseUrlLink.href = REDIRECT_URL;
-        baseUrlLink.textContent = REDIRECT_URL;
+    function setApiLinks() {
+      const links = [
+        { id: 'baseUrlLink', href: REDIRECT_URL, textId: 'baseUrlText' },
+        { id: 'allPlaceLink', href: REDIRECT_URL + '/places' },
+        { id: 'allCategoryLink', href: REDIRECT_URL + '/allcategory' },
+        { id: 'budayaLink', href: REDIRECT_URL + '/category?category=Budaya' },
+        { id: 'tamanHiburanLink', href: REDIRECT_URL + '/category?category=Taman%20Hiburan' },
+        { id: 'wisataAlamLink', href: REDIRECT_URL + '/category?category=Wisata%20Alam' },
+        { id: 'wisataBahariLink', href: REDIRECT_URL + '/category?category=Wisata%20Bahari' },
+        { id: 'wisataReligiLink', href: REDIRECT_URL + '/category?category=Wisata%20Religi' }
+      ];
 
-        const allPlaceLink = document.getElementById("allPlaceLink");
-        allPlaceLink.href = REDIRECT_URL + "/places";
+      links.forEach(link => {
+        const element = document.getElementById(link.id);
+        if (element) {
+          element.href = link.href;
+          if (link.textId) {
+            document.getElementById(link.textId).textContent = link.href;
+          }
+        }
+      });
+    }
 
-        const allCategoryLink = document.getElementById("allCategoryLink");
-        allCategoryLink.href = REDIRECT_URL + "/allcategory";
+    function initAnimations() {
+      const cards = document.querySelectorAll('.api-card');
+      cards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.1}s`;
+      });
+    }
 
-        const budayaLink = document.getElementById("budayaLink");
-        budayaLink.href = REDIRECT_URL + "/category?category=Budaya";
-
-        const tamanHiburanLink = document.getElementById("tamanHiburanLink");
-        tamanHiburanLink.href =
-          REDIRECT_URL + "/category?category=Taman%20Hiburan";
-
-        const wisataAlamLink = document.getElementById("wisataAlamLink");
-        wisataAlamLink.href = REDIRECT_URL + "/category?category=Wisata%20Alam";
-
-        const wisataBahariLink = document.getElementById("wisataBahariLink");
-        wisataAlamLink.href =
-          REDIRECT_URL + "/category?category=Wisata%20Bahari";
-
-        const wisataReligiLink = document.getElementById("wisataReligiLink");
-        wisataReligiLink.href =
-          REDIRECT_URL + "/category?category=Wisata%20Religi";
-      }
-
-      document.addEventListener("DOMContentLoaded", setApiLinks);
-    </script>
-  </body>
+    document.addEventListener('DOMContentLoaded', function() {
+      setApiLinks();
+      initAnimations();
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
 </html>
