@@ -404,6 +404,20 @@ body::before {
   background: rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-brand img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+  }
+
   .hero-section {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -446,6 +460,20 @@ body::before {
 }
 
 @media (max-width: 576px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+  }
+
   .hero-section {
     padding: 1rem;
   }
