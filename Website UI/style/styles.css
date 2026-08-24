@@ -38,7 +38,6 @@ html, body {
   }
 }
 
-/* CRT Scanlines Overlay */
 body::before {
   content: "";
   position: fixed;
@@ -58,7 +57,6 @@ body::before {
   opacity: 0.65;
 }
 
-/* Technical Navbar */
 .navbar {
   background-color: var(--bg-panel) !important;
   border-bottom: 2px solid var(--border-tech);
@@ -109,7 +107,6 @@ body::before {
   font-weight: 700;
 }
 
-/* Main Dashboard Workspace */
 .dashboard-workspace {
   flex: 1;
   padding: 1.25rem 1.5rem;
@@ -127,7 +124,6 @@ body::before {
   align-items: stretch;
 }
 
-/* Main Left Panel */
 .panel-main {
   background-color: var(--bg-panel);
   border: 2px solid var(--border-strong);
@@ -172,7 +168,6 @@ body::before {
   margin-bottom: 1.2rem;
 }
 
-/* Telemetry Metrics Grid */
 .telemetry-metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -201,7 +196,6 @@ body::before {
   display: block;
 }
 
-/* Live Terminal Log Component */
 .terminal-log-box {
   background: #050505;
   border: 1px solid var(--border-tech);
@@ -230,7 +224,6 @@ body::before {
   margin-right: 6px;
 }
 
-/* Right Endpoint Directory Panel */
 .panel-directory {
   display: flex;
   flex-direction: column;
@@ -348,7 +341,6 @@ body::before {
   letter-spacing: 0.04em;
 }
 
-/* Terminal Footer Ticker */
 .footer {
   background-color: var(--bg-panel);
   border-top: 2px solid var(--border-tech);
@@ -371,7 +363,6 @@ body::before {
   font-weight: 700;
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -389,7 +380,6 @@ body::before {
   background: var(--accent-hazard);
 }
 
-/* Responsive Overrides */
 @media (max-width: 991px) {
   html, body {
     height: auto;
@@ -401,8 +391,5 @@ body::before {
   }
   .telemetry-metrics {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .telemetry-ticker {
-    display: none;
   }
 }

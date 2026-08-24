@@ -27,7 +27,6 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/icon/android-chrome-512x512.png" />
   </head>
   <body>
-    <!-- Main Navigation Bar -->
     <nav class="navbar">
       <div class="container-fluid">
         <a href="/" class="navbar-brand">
@@ -45,9 +44,7 @@
       </div>
     </nav>
 
-    <!-- Page Workspace -->
     <div class="page-workspace">
-      <!-- Header Banner -->
       <div class="page-header-banner">
         <div class="tag">/// ENDPOINT TELEMETRY INSPECTOR ///</div>
         <div>
@@ -56,14 +53,12 @@
         </div>
       </div>
 
-      <!-- Endpoint Bar -->
       <div class="endpoint-bar">
         <span class="http-method">GET</span>
         <code class="endpoint-url-code" id="apiEndpoint">Loading...</code>
         <button class="copy-btn" onclick="copyToClipboard()">[ COPY URL ]</button>
       </div>
 
-      <!-- Stream Section -->
       <div class="stream-section">
         <div class="stream-header">
           <h3>[ REAL-TIME RESPONSE INSPECTOR ]</h3>
@@ -87,7 +82,6 @@
         </div>
       </div>
 
-      <!-- Bottom Spec Strip -->
       <div class="bottom-spec-strip">
         <div class="spec-card">
           <h4>[ HISTORICAL SITES ]</h4>
@@ -116,7 +110,6 @@
       const API_ENDPOINT = BASE_URL + "/category?category=Budaya";
       let isCollapsed = true;
       let fullResponse = "";
-      let fullData = null;
 
       function initializePage() {
         document.getElementById("apiEndpoint").textContent = API_ENDPOINT;
@@ -135,7 +128,6 @@
           const response = await fetch(API_ENDPOINT);
           const data = await response.json();
 
-          fullData = data;
           fullResponse = JSON.stringify(data, null, 2);
           displayResponse();
 
@@ -148,7 +140,6 @@
             status: 500,
             endpoint: API_ENDPOINT,
           };
-          fullData = errorResponse;
           fullResponse = JSON.stringify(errorResponse, null, 2);
           displayResponse();
         }
