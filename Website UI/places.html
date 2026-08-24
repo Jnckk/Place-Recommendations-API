@@ -4,45 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Places Telemetry // Place Recommendations API</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/style/pages.css" />
-    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/icon/android-chrome-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon/android-chrome-512x512.png" />
+    <script src="/js/components.js" data-style="pages.css"></script>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a href="/" class="navbar-brand">
-          <img
-            src="/icon/android-chrome-192x192.png"
-            alt="Place Recommendations"
-            width="32"
-            height="32"
-          />
-          <span>PLACE RECOMMENDATIONS TELEMETRY API</span>
-        </a>
-        <a href="/" class="back-btn">
-          <i class="fas fa-arrow-left me-2"></i><span>[ BACK TO INDEX ]</span>
-        </a>
-      </div>
-    </nav>
+    <div id="app-navbar"></div>
 
     <div class="page-workspace">
       <div class="page-header-banner">
@@ -98,11 +63,7 @@
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="container-fluid">
-        <p>&copy; <span id="currentYear"></span> Place Recommendations API.</p>
-      </div>
-    </footer>
+    <div id="app-footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -113,7 +74,6 @@
 
       function initializePage() {
         document.getElementById("apiEndpoint").textContent = API_ENDPOINT;
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
         loadApiData();
       }
 
