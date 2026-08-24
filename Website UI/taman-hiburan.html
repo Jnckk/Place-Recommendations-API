@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amusement Parks - Place Recommendations API</title>
+    <title>Amusement Sector // Place Recommendations API</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,112 +19,94 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/style/pages.css" />
-    <link rel="icon" href="/icon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon/android-chrome-512x512.png" />
   </head>
   <body>
+    <!-- Main Navigation Bar -->
     <nav class="navbar">
-      <div class="container">
+      <div class="container-fluid">
         <a href="/" class="navbar-brand">
           <img
-            src="/icon/icon-512.png"
+            src="/icon/android-chrome-192x192.png"
             alt="Place Recommendations"
-            width="45"
-            height="45"
+            width="32"
+            height="32"
           />
-          Place Recommendations API
+          <span>PLACE RECOMMENDATIONS TELEMETRY API</span>
         </a>
         <a href="/" class="back-btn">
-          <i class="fas fa-arrow-left me-2"></i
-          ><span class="back-text">Back to Home</span>
+          <i class="fas fa-arrow-left me-2"></i><span>[ BACK TO INDEX ]</span>
         </a>
       </div>
     </nav>
 
-    <div class="container content">
-      <div class="page-header">
-        <h1><i class="fas fa-gamepad me-3"></i>Amusement Parks</h1>
-        <p class="lead">
-          Fun-filled entertainment destinations and theme parks in East Java
-        </p>
-      </div>
-
-      <div class="api-info-card">
-        <div class="endpoint-info">
-          <h3><i class="fas fa-code me-2"></i>API Endpoint</h3>
-          <div class="endpoint-url">
-            <code id="apiEndpoint">Loading...</code>
-            <button class="copy-btn" onclick="copyToClipboard()">
-              <i class="fas fa-copy"></i>
-            </button>
-          </div>
-        </div>
-
-        <div class="method-info">
-          <span class="http-method">GET</span>
-          <span class="endpoint-path">/category?category=Taman Hiburan</span>
+    <!-- Page Workspace -->
+    <div class="page-workspace">
+      <!-- Header Banner -->
+      <div class="page-header-banner">
+        <div class="tag">/// ENDPOINT TELEMETRY INSPECTOR ///</div>
+        <div>
+          <h1>[ SECTOR: TAMAN HIBURAN ]</h1>
+          <p class="lead">/// QUERY TELEMETRY DATASTREAM FOR AMUSEMENT PARKS AND RECREATIONAL COMPLEX DESTINATIONS ///</p>
         </div>
       </div>
-      <div class="response-section">
-        <div class="response-header">
-          <h3><i class="fas fa-database me-2"></i>API Response</h3>
-          <div class="response-controls">
+
+      <!-- Endpoint Bar -->
+      <div class="endpoint-bar">
+        <span class="http-method">GET</span>
+        <code class="endpoint-url-code" id="apiEndpoint">Loading...</code>
+        <button class="copy-btn" onclick="copyToClipboard()">[ COPY URL ]</button>
+      </div>
+
+      <!-- Stream Section -->
+      <div class="stream-section">
+        <div class="stream-header">
+          <h3>[ REAL-TIME RESPONSE INSPECTOR ]</h3>
+          <div class="stream-controls">
             <button class="refresh-btn" onclick="loadApiData()">
-              <i class="fas fa-sync-alt me-2"></i>Refresh Data
+              <i class="fas fa-sync-alt"></i> [ REFRESH ]
             </button>
-            <button
-              class="collapse-btn"
-              onclick="toggleCollapse()"
-              id="collapseBtn"
-            >
-              <i class="fas fa-expand-alt me-2"></i>Expand Full Response
+            <button class="collapse-btn" onclick="toggleCollapse()" id="collapseBtn">
+              <i class="fas fa-expand-alt"></i> [ EXPAND ]
             </button>
             <button class="try-btn" onclick="openApiUrl()">
-              <i class="fas fa-external-link-alt me-2"></i>Open API Endpoint
+              <i class="fas fa-external-link-alt"></i> [ OPEN DIRECT ]
             </button>
           </div>
         </div>
         <div class="code-block" id="responseBlock">
           <div class="loading-spinner" id="loadingSpinner">
-            <i class="fas fa-spinner fa-spin"></i> Loading data...
+            <i class="fas fa-spinner fa-spin"></i> [ FETCHING DATA STREAM... ]
           </div>
           <pre><code id="apiResponse"></code></pre>
         </div>
       </div>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <i class="fas fa-rocket feature-icon"></i>
-          <h4>Thrilling Rides</h4>
-          <p>
-            Exciting roller coasters, water slides, and adrenaline-pumping
-            attractions.
-          </p>
+      <!-- Bottom Spec Strip -->
+      <div class="bottom-spec-strip">
+        <div class="spec-card">
+          <h4>[ RECREATION PARKS ]</h4>
+          <p>Theme parks, water parks, and modern recreational complexes.</p>
         </div>
-        <div class="feature-card">
-          <i class="fas fa-child feature-icon"></i>
-          <h4>Family Fun</h4>
-          <p>
-            Kid-friendly attractions and activities perfect for family
-            entertainment.
-          </p>
+        <div class="spec-card">
+          <h4>[ ENTERTAINMENT ZONES ]</h4>
+          <p>Family entertainment centers and urban leisure attractions.</p>
         </div>
-        <div class="feature-card">
-          <i class="fas fa-ticket-alt feature-icon"></i>
-          <h4>Entertainment Shows</h4>
-          <p>
-            Live performances, parades, and spectacular entertainment programs.
-          </p>
+        <div class="spec-card">
+          <h4>[ FAMILY DESTINATIONS ]</h4>
+          <p>Interactive science parks and educational attraction venues.</p>
         </div>
       </div>
     </div>
 
     <footer class="footer">
-      <div class="container">
-        <p>
-          <i class="fas fa-code me-2"></i> &copy;
-          <span id="currentYear"></span> Place Recommendations API.<br />
-          Built with ❤️ for developers.
-        </p>
+      <div class="container-fluid">
+        <p>&copy; <span id="currentYear"></span> Place Recommendations API.</p>
       </div>
     </footer>
 
@@ -138,8 +120,7 @@
 
       function initializePage() {
         document.getElementById("apiEndpoint").textContent = API_ENDPOINT;
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
         loadApiData();
       }
 
@@ -162,8 +143,8 @@
         } catch (error) {
           loadingSpinner.style.display = "none";
           const errorResponse = {
-            error: "Failed to fetch data",
-            message: "Could not connect to API endpoint",
+            error: "Telemetry connection failed",
+            message: "Unable to reach endpoint stream",
             status: 500,
             endpoint: API_ENDPOINT,
           };
@@ -172,6 +153,7 @@
           displayResponse();
         }
       }
+
       function displayResponse() {
         const responseElement = document.getElementById("apiResponse");
         const responseLines = fullResponse.split("\n");
@@ -180,9 +162,9 @@
           const remainingLines = responseLines.length - 20;
           responseElement.textContent =
             collapsedResponse +
-            "\n// ... " +
+            "\n\n// [ TRUNCATED STREAM: " +
             remainingLines +
-            ' more lines collapsed\n// Click "Expand Full Response" to see all data';
+            ' LINES OMITTED ]\n// Click "[ EXPAND ]" to inspect raw output';
         } else {
           responseElement.textContent = fullResponse;
         }
@@ -191,19 +173,12 @@
       function toggleCollapse() {
         const btn = document.getElementById("collapseBtn");
         const responseLines = fullResponse.split("\n");
-        if (responseLines.length <= 20) {
-          return;
-        }
+        if (responseLines.length <= 20) return;
 
         isCollapsed = !isCollapsed;
-
-        if (isCollapsed) {
-          btn.innerHTML =
-            '<i class="fas fa-expand-alt me-2"></i>Expand Full Response';
-        } else {
-          btn.innerHTML =
-            '<i class="fas fa-compress-alt me-2"></i>Collapse to 20 Lines';
-        }
+        btn.innerHTML = isCollapsed
+          ? '<i class="fas fa-expand-alt me-1"></i>[ EXPAND ]'
+          : '<i class="fas fa-compress-alt me-1"></i>[ COLLAPSE ]';
 
         displayResponse();
       }
@@ -212,8 +187,8 @@
         navigator.clipboard.writeText(API_ENDPOINT).then(() => {
           const btn = document.querySelector(".copy-btn");
           const originalText = btn.innerHTML;
-          btn.innerHTML = '<i class="fas fa-check"></i>';
-          btn.style.color = "#10b981";
+          btn.innerHTML = "[ COPIED! ]";
+          btn.style.color = "var(--accent-green)";
 
           setTimeout(() => {
             btn.innerHTML = originalText;
@@ -221,6 +196,7 @@
           }, 2000);
         });
       }
+
       function openApiUrl() {
         window.open(API_ENDPOINT, "_blank");
       }

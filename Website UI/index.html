@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Place Recommendations API</title>
+    <title>Place Recommendations API // Tactical Telemetry Console</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -19,168 +19,185 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/style/styles.css" />
-    <link rel="icon" href="/icon/favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/x-icon" href="/icon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon/android-chrome-512x512.png" />
   </head>
   <body>
+    <!-- Main Navigation Bar -->
     <nav class="navbar">
-      <div class="container">
-        <a class="navbar-brand">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
           <img
-            src="/icon/icon-512.png"
+            src="/icon/android-chrome-192x192.png"
             alt="Place Recommendations"
-            width="45"
-            height="45"
+            width="32"
+            height="32"
           />
-          Place Recommendations API
+          <span>PLACE RECOMMENDATIONS TELEMETRY API</span>
         </a>
+        <div class="navbar-sys-info">
+          <span class="navbar-status">[ SYS // ACTIVE ]</span>
+        </div>
       </div>
     </nav>
-    <div class="container content">
-      <div class="row">
-        <div class="col-lg-7 mb-4">
-          <div class="hero-section">
-            <h1>
-              <i class="fas fa-map-marked-alt me-3"></i>Discover East Java
-            </h1>
-            <p>
-              Welcome to the most comprehensive API for East Java tourist
-              destinations. Our platform provides detailed information about
-              cultural sites, amusement parks, natural attractions, and
-              religious places across the beautiful province of East Java.
+
+    <!-- High-Density Dashboard Workspace -->
+    <div class="dashboard-workspace">
+      <div class="dashboard-grid">
+        <!-- Main Left Telemetry Panel -->
+        <div class="panel-main">
+          <div class="panel-tag">/// SYSTEM SPECIFICATION & LIVE TELEMETRY ///</div>
+          <div>
+            <h1>EAST JAVA DESTINATIONS TELEMETRY DATABASE</h1>
+            <p class="description">
+              [ SYSTEM SPECIFICATION ] High-density RESTful data endpoint delivering telemetry, spatial coordinates, cultural classification, and metadata on tourism destinations across the East Java province.
+              Architected for fast automated consumption, zero-footprint developer integration, and predictable JSON schema outputs across all regional queries.
             </p>
-            <p>
-              Built with modern technology and designed for developers, our API
-              offers seamless integration with clean endpoints, comprehensive
-              data, and reliable performance. Start exploring the rich heritage
-              and stunning landscapes of East Java today.
-            </p>
-            <div class="hero-badges">
-              <span class="badge hero-badge">
-                <i class="fas fa-database me-2"></i>Rich Dataset
-              </span>
-              <span class="badge hero-badge">
-                <i class="fas fa-code me-2"></i>RESTful API
-              </span>
-              <span class="badge hero-badge">
-                <i class="fas fa-mobile-alt me-2"></i>Mobile Ready
-              </span>
+
+            <!-- Metrics Bar -->
+            <div class="telemetry-metrics">
+              <div class="metric-box">
+                <span class="metric-label">[ DATASET ]</span>
+                <span class="metric-val">437 PLACES</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">[ SECTORS ]</span>
+                <span class="metric-val">5 GROUPS</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">[ FORMAT ]</span>
+                <span class="metric-val">REST / JSON</span>
+              </div>
+              <div class="metric-box">
+                <span class="metric-label">[ ENCODING ]</span>
+                <span class="metric-val">UTF-8</span>
+              </div>
             </div>
           </div>
+
+          <!-- Live Terminal Log Box -->
+          <div class="terminal-log-box">
+            <div class="log-head">[ SYSTEM AUDIT & TERMINAL LOG ]</div>
+            <span class="log-line"><span class="log-prompt">></span>[SYS.INIT] Telemetry router initialized on PORT 3000.</span>
+            <span class="log-line"><span class="log-prompt">></span>[DATASET] /data/Place-Data.csv loaded successfully (437 entries).</span>
+            <span class="log-line"><span class="log-prompt">></span>[CORS] Access-Control-Allow-Origin: * (Permissive Mode).</span>
+            <span class="log-line"><span class="log-prompt">></span>[READY] Listening for HTTP requests on /places & /category.</span>
+          </div>
         </div>
-        <div class="col-lg-5">
-          <div class="api-cards">
-            <div class="api-card" data-expanded="false">
-              <div class="api-card-header" onclick="toggleCard(this)">
-                <h3>
-                  <span><i class="fas fa-server me-2"></i>Base URL</span>
-                  <span class="icon">▼</span>
-                </h3>
-              </div>
-              <div class="api-card-body">
-                <a id="baseUrlLink" href="#" target="_blank" class="api-link">
-                  <i class="fas fa-external-link-alt me-2"></i>
-                  <span id="baseUrlText">Loading...</span>
-                </a>
-              </div>
-            </div>
 
-            <div class="api-card" data-expanded="false">
-              <div class="api-card-header" onclick="toggleCard(this)">
-                <h3>
-                  <span><i class="fas fa-list me-2"></i>Get All Places</span>
-                  <span class="icon">▼</span>
-                </h3>
-              </div>
-              <div class="api-card-body">
-                <a id="allPlaceLink" href="#" class="api-link">
-                  <i class="fas fa-map-marker-alt me-2"></i>
-                  GET /places
-                </a>
-                <small class="d-block mt-2 text-light opacity-75"
-                  >Retrieve all tourist places in East Java</small
-                >
-              </div>
+        <!-- Right Directory Panel -->
+        <div class="panel-directory">
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-server me-2"></i>[01] BASE URL</span>
+                <span class="icon">[+]</span>
+              </h3>
             </div>
-
-            <div class="api-card" data-expanded="false">
-              <div class="api-card-header" onclick="toggleCard(this)">
-                <h3>
-                  <span
-                    ><i class="fas fa-tags me-2"></i>Get All Categories</span
-                  >
-                  <span class="icon">▼</span>
-                </h3>
-              </div>
-              <div class="api-card-body">
-                <a id="allCategoryLink" href="#" class="api-link">
-                  <i class="fas fa-th-list me-2"></i>
-                  GET /allcategory
-                </a>
-                <small class="d-block mt-2 text-light opacity-75"
-                  >Get list of all available categories</small
-                >
-              </div>
+            <div class="api-card-body">
+              <a id="baseUrlLink" href="#" target="_blank" class="api-link">
+                <i class="fas fa-external-link-alt me-2"></i>
+                <span id="baseUrlText">Loading...</span>
+              </a>
             </div>
+          </div>
 
-            <div class="api-card" data-expanded="false">
-              <div class="api-card-header" onclick="toggleCard(this)">
-                <h3>
-                  <span
-                    ><i class="fas fa-filter me-2"></i>Get Places by
-                    Category</span
-                  >
-                  <span class="icon">▼</span>
-                </h3>
-              </div>
-              <div class="api-card-body">
-                <ul class="category-links">
-                  <li>
-                    <a id="budayaLink" href="#" class="api-link">
-                      <i class="fas fa-monument me-2"></i>
-                      GET /category?category=Budaya
-                    </a>
-                  </li>
-                  <li>
-                    <a id="tamanHiburanLink" href="#" class="api-link">
-                      <i class="fas fa-gamepad me-2"></i>
-                      GET /category?category=Taman Hiburan
-                    </a>
-                  </li>
-                  <li>
-                    <a id="wisataAlamLink" href="#" class="api-link">
-                      <i class="fas fa-mountain me-2"></i>
-                      GET /category?category=Wisata Alam
-                    </a>
-                  </li>
-                  <li>
-                    <a id="wisataBahariLink" href="#" class="api-link">
-                      <i class="fas fa-water me-2"></i>
-                      GET /category?category=Wisata Bahari
-                    </a>
-                  </li>
-                  <li>
-                    <a id="wisataReligiLink" href="#" class="api-link">
-                      <i class="fas fa-mosque me-2"></i>
-                      GET /category?category=Wisata Religi
-                    </a>
-                  </li>
-                </ul>
-                <small class="d-block mt-2 text-light opacity-75"
-                  >Filter places by specific categories</small
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span><i class="fas fa-list me-2"></i>[02] GET ALL PLACES</span>
+                <span class="icon">[+]</span>
+              </h3>
+            </div>
+            <div class="api-card-body">
+              <a id="allPlaceLink" href="#" class="api-link">
+                <i class="fas fa-terminal me-2"></i>
+                GET /places
+              </a>
+              <small class="d-block mt-2"
+                >/// RETRIEVE COMPLETE TELEMETRY REGISTRY ///</small
+              >
+            </div>
+          </div>
+
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span
+                  ><i class="fas fa-tags me-2"></i>[03] GET CATEGORIES</span
                 >
-              </div>
+                <span class="icon">[+]</span>
+              </h3>
+            </div>
+            <div class="api-card-body">
+              <a id="allCategoryLink" href="#" class="api-link">
+                <i class="fas fa-terminal me-2"></i>
+                GET /allcategory
+              </a>
+              <small class="d-block mt-2"
+                >/// QUERY CATEGORY TAXONOMY INDEX ///</small
+              >
+            </div>
+          </div>
+
+          <div class="api-card" data-expanded="false">
+            <div class="api-card-header" onclick="toggleCard(this)">
+              <h3>
+                <span
+                  ><i class="fas fa-filter me-2"></i>[04] QUERY BY CATEGORY</span
+                >
+                <span class="icon">[+]</span>
+              </h3>
+            </div>
+            <div class="api-card-body">
+              <ul class="category-links">
+                <li>
+                  <a id="budayaLink" href="#" class="api-link">
+                    <i class="fas fa-monument me-2"></i>
+                    GET /category?category=Budaya
+                  </a>
+                </li>
+                <li>
+                  <a id="tamanHiburanLink" href="#" class="api-link">
+                    <i class="fas fa-gamepad me-2"></i>
+                    GET /category?category=Taman Hiburan
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataAlamLink" href="#" class="api-link">
+                    <i class="fas fa-mountain me-2"></i>
+                    GET /category?category=Wisata Alam
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataBahariLink" href="#" class="api-link">
+                    <i class="fas fa-water me-2"></i>
+                    GET /category?category=Wisata Bahari
+                  </a>
+                </li>
+                <li>
+                  <a id="wisataReligiLink" href="#" class="api-link">
+                    <i class="fas fa-mosque me-2"></i>
+                    GET /category?category=Wisata Religi
+                  </a>
+                </li>
+              </ul>
+              <small class="d-block mt-2"
+                >/// FILTER TELEMETRY STREAM BY SECTOR ///</small
+              >
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <footer class="footer">
-      <div class="container">
-        <p>
-          <i class="fas fa-code me-2"></i>
-          &copy; <span id="currentYear"></span> Place Recommendations API.<br />
-          Built with ❤️ for developers.
-        </p>
+      <div class="container-fluid">
+        <p>&copy; <span id="currentYear"></span> Place Recommendations API.</p>
       </div>
     </footer>
 
@@ -191,40 +208,22 @@
       function toggleCard(header) {
         const card = header.parentElement;
         const isExpanded = card.getAttribute("data-expanded") === "true";
+        const iconSpan = header.querySelector(".icon");
 
         document.querySelectorAll(".api-card").forEach((otherCard) => {
-          if (
-            otherCard !== card &&
-            otherCard.getAttribute("data-expanded") === "true"
-          ) {
+          if (otherCard !== card && otherCard.getAttribute("data-expanded") === "true") {
             otherCard.setAttribute("data-expanded", "false");
-            const links = otherCard.querySelectorAll(".api-link");
-            links.forEach((link, index) => {
-              setTimeout(() => {
-                link.style.opacity = "0";
-                link.style.transform = "translateX(-20px)";
-              }, index * 30);
-            });
+            const otherIcon = otherCard.querySelector(".icon");
+            if (otherIcon) otherIcon.textContent = "[+]";
           }
         });
 
-        setTimeout(
-          () => {
-            card.setAttribute("data-expanded", (!isExpanded).toString());
-
-            if (!isExpanded) {
-              const links = card.querySelectorAll(".api-link");
-              links.forEach((link, index) => {
-                setTimeout(() => {
-                  link.style.opacity = "1";
-                  link.style.transform = "translateX(0)";
-                }, index * 50 + 200);
-              });
-            }
-          },
-          isExpanded ? 0 : 100
-        );
+        card.setAttribute("data-expanded", (!isExpanded).toString());
+        if (iconSpan) {
+          iconSpan.textContent = isExpanded ? "[+]" : "[-]";
+        }
       }
+
       function setApiLinks() {
         const links = [
           { id: "baseUrlLink", href: REDIRECT_URL, textId: "baseUrlText" },
@@ -248,18 +247,9 @@
         });
       }
 
-      function initAnimations() {
-        const cards = document.querySelectorAll(".api-card");
-        cards.forEach((card, index) => {
-          card.style.animationDelay = `${index * 0.1}s`;
-        });
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
         setApiLinks();
-        initAnimations();
-        document.getElementById("currentYear").textContent =
-          new Date().getFullYear();
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
       });
     </script>
   </body>
